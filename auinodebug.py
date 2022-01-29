@@ -14,9 +14,10 @@ class CPUI:
         self.debug(f"AUI version {self.version}")
 
     def debug(self, msg):
-        self.say(f"!!{msg}!!")
-        if self.log:
-            self.cplog.write(msg)
+        pass
+#        self.say(f"!!{msg}!!")
+#        if self.log:
+#            self.cplog.write(msg)
 
     def readLog(self):
         return self.cplog.read()

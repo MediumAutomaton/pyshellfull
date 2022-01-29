@@ -7,7 +7,7 @@ syntaxver = "1.1-0"
 # Disabled commands:
 discomm = []
 # Automatically import modules:
-impor = ["cpfm", ]
+impor = ["cpfm"]
 # Run commands on startup:
 autorun = []
 
@@ -15,18 +15,11 @@ autorun = []
 cbh = "="
 # Left Side
 cbvl = "]]]"
-# Right Side (There's some cheating going on here to make the backslashes work.)
+# Right Side (There is some cheating going on here to make the backslashes work.)
 cbvr = "[[["
-#Backslashes are also the escape character! This is a weird cheaty way of making them show up.
-#a = ""
-#cbvr = f"\\{a}\\{a}\{a}"
-
-
 def main():
     print(f"CP Config File; Syntax version {syntaxver}.")
     print("To change config settings, edit this Python file in a text editor.")
-
 newcomms = {}
-
 if __name__ == "__main__":
     main()

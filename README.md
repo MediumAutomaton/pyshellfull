@@ -1,6 +1,7 @@
 # pyshellfull
 ----
 Please note that the commit messages and times are wrong for some reason, but the code itself is still up-to-date.
+Make sure to create a "cplog.txt" file before trying to launch, or else it will crash immediately.
 ### "Command Processor" (CP) Shell - An introductory project for myself (very incomplete)
 - I am new to everything, including Markdown. Sorry in advance for the complete buggy mess of this project.
 - Anyway, it's shared here now if you're interested.

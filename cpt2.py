@@ -1,6 +1,6 @@
 cargs = "You forgot your command arguments!"
 conftemp = '# Syntax version of this config file.\nsyntaxver = "1.1-0"\n\n# After updating CP, you might want to delete this file and have CP generate a new one conforming to the newer syntax\n# standards. Below are some config options. They are Python lists; be sure to use correct syntax.\n\n# Disabled commands:\ndiscomm = []\n# Automatically import modules:\nimpor = ["cpfm", ]\n# Run commands on startup:\nautorun = []\n\n# Top/Bottom Borders of coolBorder messages\ncbh = "="\n# Left Side\ncbvl = "]]]"\n# Right Side (There is some cheating going on here to make the backslashes work.)\ncbvr = "[[["\ndef main():\n    print(f"CP Config File; Syntax version {syntaxver}.")\n    print("To change config settings, edit this Python file in a text editor.")\nnewcomms = {}\nif __name__ == "__main__":\n    main()'
-version = "0.9-5"
+version = "0.10-0"
 exinfo = "Copyleft 2021; licensed under GNU GPL 3.0"
 comms = {}
 #comms = {"alias": "self.commands.alias()", "ver": "self.commands.ver()", "debug": "self.commands.debug()", "merge": "self.commands.impor()", "help": "self.commands.help()", "exec": "self.commands.exec()", "read": "self.commands.read()", "echo": "self.commands.echo()", "testfile": "self.commands.testFile()", "readlog": "self.commands.readLog()", "eval": "self.commands.eval()", "exit": "self.commands.exit()", "coolBorder": "self.commands.coolBorder()", "scrip": "self.commands.scrip()"}

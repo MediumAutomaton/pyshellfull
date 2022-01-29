@@ -9,7 +9,7 @@ discomm = []
 # Automatically import modules:
 impor = ["cpfm", ]
 # Run commands on startup:
-autorun = ["ver", "help", ]
+autorun = []
 
 # Top/Bottom Borders of coolBorder messages
 cbh = "="
@@ -17,6 +17,7 @@ cbh = "="
 cbvl = "]]]"
 # Right Side (There's some cheating going on here to make the backslashes work.)
 cbvr = "[[["
+#Backslashes are also the escape character! This is a weird cheaty way of making them show up.
 #a = ""
 #cbvr = f"\\{a}\\{a}\{a}"
 
@@ -24,7 +25,6 @@ cbvr = "[[["
 def main():
     print(f"CP Config File; Syntax version {syntaxver}.")
     print("To change config settings, edit this Python file in a text editor.")
-
 
 newcomms = {}
 

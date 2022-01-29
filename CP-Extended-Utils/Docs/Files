@@ -1,0 +1,27 @@
+CP Extended Utilities Package version 0.1-0
+
+The Extended Utilities is a collection of basic applications designed to work with the CP shell. The __init__.py file is automatically imported by CP if this package is present in the same directory as CP.
+
+Below is a reference of all included utilities, their Python file names, and their purposes.
+
+Each module contains more information about itself, such as version and technical information, as well as integration with other utilities.
+
+
+ETUI - Emulated TTY UI - etui.py - Provides a TkInter-based terminal window. This file is also the CP-GUI compatibility layer, and other GUIs can be built using some of the features in this module.
+
+AUI (standalone version) - aui.py - Pure TTY UI, fully compatible with the latest version of CP. Standalone version is often more up-to-date than CP's built-in copy, and can be used to run standalone versions of the other utilities.
+
+CPFM (CP File Manager) - cpfm.py - A wrapper around pathlib.Path to provide basic file exploration and management
+
+CP File Utilities - cpfh.py - This is another entire package of its own. File handling is done as it would be in a normal shell, using many simple commands. Provides capabilities far beyond CPFM, but possibly less intuitive.
+
+CPled (CP line editor) - led.py - Simple file editing; integrates with CPFM as default file editor
+
+abstract - ab.py - Like Debian's alias; abstract Python commands (or entire files) behind different CP commands. Adds fully custom commands to the CP command dictionary.
+
+lightgraph - lg.py - A few simple graphical abilities for CP applications that can use them.
+
+catalog - exutilcat.py - Learn about more recommended utilities for CP that aren't included with this package.
+
+
+Some of these utilities have standalone versions. These are available in the "standalone" folder.

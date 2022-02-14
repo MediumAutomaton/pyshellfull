@@ -113,7 +113,7 @@ class Commands:
 
     def deregister(self):
         for item in cargs:
-            del d[item]
+            del comms[item]
 
     def scrip(self):
         Utils.scrip()

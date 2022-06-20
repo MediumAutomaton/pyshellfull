@@ -278,7 +278,7 @@ class Utils:
                     f.write("[]")
             elif cargs[0] == "a":
                 with open(cargs[1], "w") as f:
-                    f.seek(0, len(f.read())-1)
+                    f.seek(-1, 2)
                     f.write(f"{cargs[2]}, ")
             elif cargs[0] == "d":
                 os.remove(f"{cargs[1]}.scrip")

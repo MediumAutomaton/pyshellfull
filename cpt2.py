@@ -268,18 +268,18 @@ class Utils:
 
     @staticmethod
     def scrip():
-        if cargs[0]:
+        if cargs:
             if cargs[0] == "f":
                 with open(f"{cargs[1]}.scrip", "x"):
                     newscrip = {f"{cargs[1]}":f"Utils.scripread({cargs[1]})"}
                     global comms
                     comms.update(newscrip)
-                with open(cargs[1], "w") as f:
+                with open(f"{cargs[1]}.scrip", "w") as f:
                     f.write("[]")
             elif cargs[0] == "a":
-                with open(cargs[1], "w") as f:
-                    f.seek(-1, 2)
-                    f.write(f"{cargs[2]}, ")
+                with open(f"{cargs[1]}.scrip", "r+") as f:
+                    f.seek(len(f.read())-1, 0)
+                    f.write(f"{cargs[2]},]")
             elif cargs[0] == "d":
                 os.remove(f"{cargs[1]}.scrip")
             elif cargs[0] == "s":
@@ -290,19 +290,26 @@ class Utils:
                     comms.update(ps)
             elif cargs[0] == "r":
                 Utils.scripread(cargs[1])
+                ui.say(cargs[1])
         else:
             ui.say("f [scripname]: create and install new scrip\na [scripname] [toAppend]: append to scrip\nd [scripname]: delete scrip\nr [scripname]: install scrip (add it to the CP command dictionary)\ns: find and install all scrips in current working directory")
 
     @staticmethod
-    def scripread(file):
-        with open(f"{file}.scrip", "r") as f:
-            l = f.read()
+    def scripread(a):
+        with open(f"{a}.scrip", "r+") as f:
+            f.seek(1, 0)
+            s = f.read(len(f.read())-2)
+            l = s.split(",")
             for i in l:
                 try:
                     exec(comms[i])
                 except Exception as x:
-                    ui.debug(f"Script: {file}\nError: {x}")
-                    ui.say("Error running script.")
+                    ui.say(x)
+                    ui.say(f"{a}.scrip")
+                    ui.say(f.read())
+                    ui.say(s)
+                    ui.say(l)
+#                    ui.say(f"Scrip: {f}\nError: {x}\n{s}\n{l}")
 
 #Top-Level
 print(__name__)
@@ -326,6 +333,8 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--errpack", help="Want to use an errorpack, to make the rare CP crash even funnier?", action="store_true")
     args = parser.parse_args()
     CP = CP(args)
+
+    args.cstart = True
 
     if args.regenconf:
         CP.makeConfig()
